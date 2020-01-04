@@ -11356,3 +11356,8 @@ a.text-dark:focus {
   }
 }
 
+#map {
+  width: 100%;
+  height: 500px;
+}
+

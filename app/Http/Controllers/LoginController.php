@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -23,9 +24,12 @@ class LoginController extends Controller
     {
         $attempt = Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')]);
 
-        if ($attempt) {
 
-            dd($attempt);
+        if ($attempt) {
+            return redirect('/');
         }
+
+        Session::flash('error_message', 'Invalid User. Please Try Again');
+        return redirect('login');
     }
 }

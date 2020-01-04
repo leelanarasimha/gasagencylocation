@@ -48,7 +48,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     {!! Form::label('confirm_password', 'Confirm Password:') !!}
-                    {!! Form::password('consfirm_password', ['class' => 'form-control',
+                    {!! Form::password('confirm_password', ['class' => 'form-control',
                     'placeholder' => 'Confirm Password']) !!}
                 </div>
             </div>

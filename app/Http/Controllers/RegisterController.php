@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterRequest;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class RegisterController extends Controller
 {
@@ -19,6 +21,16 @@ class RegisterController extends Controller
 
     public function store(RegisterRequest $request)
     {
-        dd($request->all());
+        $postData = array(
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'mobile' => $request->input('mobile'),
+            'password' => bcrypt($request->input('password'))
+        );
+
+        if (User::create($postData)) {
+            Session::flash('success_message', 'User Created SUccessfully');
+            return redirect('login');
+        }
     }
 }
