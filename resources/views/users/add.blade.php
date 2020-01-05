@@ -35,6 +35,25 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
+                    {!! Form::label('password', 'Password:') !!}
+                    {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password']) !!}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    {!! Form::label('confirm_password', 'Confirm Password:') !!}
+                    {!! Form::password('confirm_password', ['class' => 'form-control',
+                    'placeholder' => 'Confirm Password']) !!}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
                     {!! Form::submit('Register', ['class' => 'btn btn-primary']) !!}
                 </div>
             </div>

@@ -32,6 +32,14 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    {!! Form::label('Update Password', 'Password:') !!}
+                    {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password']) !!}
+                </div>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-md-12">

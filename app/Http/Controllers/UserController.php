@@ -50,8 +50,13 @@ class UserController extends Controller
     public function update(UserRequest $request, $id)
     {
         $user = User::find($id);
-        $user->name = $request->get('na̋̊̊̊me');
-        $user->email = $request->get('email');
-        $user->mobile = $request->get('mobile ');
+
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->mobile = $request->input('mobile');
+
+        $user->save();
+        $request->session()->flash('success_message', 'User updated successfully');
+        return redirect('/users');
     }
 }
